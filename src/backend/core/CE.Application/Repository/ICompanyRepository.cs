@@ -9,8 +9,8 @@ namespace CE.Application.Repository
 {
     public interface ICompanyRepository
     {
-        Task<ICollection<Company>> GetAllCompanies();
-        Task<Company> GetCompanyById(int id);
+        Task<ICollection<Company>> GetAllCompanies(bool trackChanges);
+        Task<Company?> GetCompanyById(int id, bool trackChanges);
         void AddCompany(Company company);
         void UpdateCompany(Company company);
         void DeleteCompany(Company company);

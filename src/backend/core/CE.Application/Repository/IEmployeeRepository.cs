@@ -9,8 +9,8 @@ namespace CE.Application.Repository
 {
     public interface IEmployeeRepository
     {
-        Task<ICollection<Employee>> GetAllEmployees();
-        Task<Employee> GetEmployeeById(int id);
+        Task<ICollection<Employee>> GetAllEmployees(bool trackChanges);
+        Task<Employee> GetEmployeeById(int id, bool trackChanges);
         void AddEmployee(Employee employee);
         void UpdateEmployee(Employee employee);
         void DeleteEmployee(Employee employee);

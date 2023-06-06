@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CE.Persistence.Repositories.Common
 {
-    public class RepositoryBase<T> : IRepositoryBase<T> where T : class
+    public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
         private readonly RepositoryContext _context;
 
@@ -39,7 +39,7 @@ namespace CE.Persistence.Repositories.Common
         {
             return trackChanges ? await _context.Set<T>().Where(expression).ToListAsync():
                                   await _context.Set<T>().AsNoTracking().Where(expression).ToListAsync();
-        }
+        } 
 
         public void Update(T entity)
         {

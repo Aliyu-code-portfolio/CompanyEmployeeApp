@@ -12,6 +12,6 @@ namespace CE.Application.Common
         public ICompanyRepository CompanyRepository { get; }
         public IEmployeeRepository EmployeeRepository { get; }
         public IAddressRepository AddressRepository { get; }
-        void Save();
+        void SaveAsync();
     }
 }

@@ -9,8 +9,8 @@ namespace CE.Application.Repository
 {
     public interface IAddressRepository
     {
-        Task<ICollection<Address>> GetAllAddress();
-        Task<Address> GetAddressById(int id);
+        Task<ICollection<Address>> GetAllAddress(bool trackChanges);
+        Task<Address> GetAddressById(int id, bool trackChanges);
         void AddAddress(Address address);
         void UpdateAddress(Address address);
         void DeleteAddress(Address address);
